@@ -1,0 +1,5 @@
+<label for="white-player">White Player</label>
+{{view 'select' id='white-player' content=possibleWhitePlayers optionLabelPath='content.name' optionValuePath='content.id' value=selectedWhitePlayer prompt='Select a player'}}
+
+<label for="black-player">Black Player</label>
+{{view 'select' id='black-player' content=possibleBlackPlayers optionLabelPath='content.name' optionValuePath='content.id' value=selectedBlackPlayer prompt='Select a player'}}
