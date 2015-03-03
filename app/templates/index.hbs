@@ -1,1 +1,20 @@
-{{outlet}}
+<h1>Standings</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Wins</th>
+            <th>Losses</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each person in model}}
+            <tr>
+                <td>{{#link-to 'person' person.id}}{{person.name}}{{/link-to}}</td>
+                <td>{{person.wins}}</td>
+                <td>{{person.losses}}</td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>
+{{#link-to 'game.new' tagName='button'}}New Game{{/link-to}}
