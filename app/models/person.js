@@ -2,8 +2,15 @@ import DS from 'ember-data';
 
 var Person = DS.Model.extend({
     name: DS.attr('string'),
-    wins: DS.attr('number'),
-    losses: DS.attr('number')
+    games: DS.hasMany('game', {inverse: 'players', async: true}),
+    wonGames: DS.hasMany('game', {inverse: 'winner', async: true}),
+    wonGamesCount: function() {
+        return this.get('wonGames.length');
+    }.property('wonGames.length'),
+    lostGames: DS.hasMany('game', {inverse: 'loser', async: true}),
+    lostGamesCount: function() {
+        return this.get('lostGames.length');
+    }.property('lostGames.length')
 });
 
 Person.reopenClass({
@@ -11,20 +18,23 @@ Person.reopenClass({
         {
             id: 1,
             name: 'Michael Boselowitz',
-            wins: 5,
-            losses: 1
+            games: [1, 2, 3, 4, 5, 6],
+            wonGames: [1, 2, 3, 4, 6],
+            lostGames: [5]
         },
         {
             id: 2,
             name: 'Lori Paul',
-            wins: 1,
-            losses: 3
+            games: [1, 3, 4, 5],
+            wonGames: [5],
+            lostGames: [1, 3, 4]
         },
         {
             id: 3,
             name: 'Matt Ross',
-            wins: 0,
-            losses: 2
+            games: [2, 6],
+            wonGamse: [],
+            lostGames: [2, 6]
         }
     ]
 });
