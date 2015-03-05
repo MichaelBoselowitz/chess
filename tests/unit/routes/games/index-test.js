@@ -3,7 +3,7 @@ import {
   test
 } from 'ember-qunit';
 
-moduleFor('route:game/new', {
+moduleFor('route:games/index', {
   // Specify the other units that are required for this test.
   // needs: ['controller:foo']
 });
