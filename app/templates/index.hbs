@@ -11,8 +11,8 @@
         {{#each person in model}}
             <tr>
                 <td>{{#link-to 'person' person.id}}{{person.name}}{{/link-to}}</td>
-                <td>{{person.wins}}</td>
-                <td>{{person.losses}}</td>
+                <td>{{person.wonGamesCount}}</td>
+                <td>{{person.lostGamesCount}}</td>
             </tr>
         {{/each}}
     </tbody>
