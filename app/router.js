@@ -9,6 +9,9 @@ Router.map(function() {
     this.resource('games', function() {
         this.route('new');
     });
+    this.resource('people', function() {
+        this.route('new');
+    });
     this.resource('person', { path: '/person/:person_id' }, function() {});
 });
 
