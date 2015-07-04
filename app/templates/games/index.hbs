@@ -9,7 +9,7 @@
         </tr>
     </thead>
     <tbody>
-        {{#each game in model}}
+        {{#each model as |game|}}
             <tr>
                 <td>{{#link-to 'person' game.winner.id}}{{game.winner.name}}{{/link-to}}</td>
                 <td>{{#link-to 'person' game.loser.id}}{{game.loser.name}}{{/link-to}}</td>
